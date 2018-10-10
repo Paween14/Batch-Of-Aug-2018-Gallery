@@ -16,7 +16,7 @@ const displayImage = () => {
         let imageAndInfo = document.createElement('div');
         imageAndInfo.classList.add('individual-info');
         imageAndInfo.innerHTML = `
-            <img src="./images/${individual.src.trim()}" alt="${individual.firstName.toLowerCase().trim()}" class="personalImg" width="100%"  onclick="popup(this)">
+            <img src="./images/${individual.src.trim()}" alt="${individual.firstName.toLowerCase().trim()}" class="personalImg" width="100%" onclick="popup(this)">
             <p>${individual.firstName} ${individual.lastName}</p>
         `;
 
@@ -63,8 +63,9 @@ const displayImage = () => {
     })
 }
 
-const popup = (element) => {
-    //console.log(element);
+// add eventListener inline on <img> element above
+const popup = (element) => {            
+    console.log(element);
     //console.log(element.alt);
     let targetedPopup = document.querySelector(`img[alt = '${element.alt}'] ~ .modal`);
     targetedPopup.style.display = 'block';
@@ -93,4 +94,4 @@ const popup = (element) => {
 }
 
 // ======================== Calling functions =========================
-setTimeout(displayImage, 200);
+setTimeout(displayImage, 100);
