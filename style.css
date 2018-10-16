@@ -26,10 +26,11 @@ header {
     display: block;
     width: 55vw;
     margin: 0 auto;
+    text-align: center;
 }
 
 .logo-img {
-    width: 100%;
+    width: 90%;
 }
 
 .header-title {
@@ -40,36 +41,16 @@ header {
 }
 
 .header-title > h1 {
-    font-size: 1.65em;
+    font-size: 1.45em;
     letter-spacing: -1px;
 }
 
 .header-title > p {
     color: rgb(153, 149, 149);
     margin-top: 5px;
-    font-size: 13px;
+    font-size: 12px;
     letter-spacing: 2.5px;
 } 
-
-
-/* header h1 {
-    padding-top: 60px;
-    text-align: left;
-}
-
-header p {
-    font-size: 15px;
-    text-align: left;
-    margin-top: 10px;
-}
-
-.logo-img {
-    width: 20%;
-    display: block;
-    float: left;
-    margin-left: 10px;
-    vertical-align: baseline;
-} */
 
 main {
     margin: 10px 50px 20px;
@@ -88,7 +69,6 @@ main {
     color: rgb(214, 133, 41);
     cursor: pointer;
 }
-
 
 /* =========================================================
                      Pictures Area 
@@ -149,9 +129,8 @@ main {
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 85%;
     text-align: center;
-
 }
 
 /* The Close Button */
@@ -170,14 +149,8 @@ main {
     cursor: pointer;
 }
 
-.container-img-info-popup {
-    display: grid;
-    grid-template-columns: repeat( auto-fit , minmax(48%, 1fr));
-    grid-template-rows: repeat( auto-fit , 1fr);
-}
-
 .popup-img > img {
-    width: 100%;
+    width: 65%;
 }
 
 .popup-information {
@@ -219,6 +192,24 @@ main {
     font-weight: bold;
 }
 
+/* ================ Previous and Next nav ================= */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav > button {
+    background: transparent;
+    border: transparent;
+    font-size: 45px;
+    font-weight: bold;
+    color: #727070;
+}
+
+.nav > button:hover {
+    color:rgb(182, 84, 19);
+}
+
 /* ==========================================================
                     Media-query
 ============================================================= */
@@ -229,7 +220,11 @@ main {
 
     .logo {
         width: 40vw;
-        margin: 0;
+        text-align: left;
+    }
+
+    .logo-img {
+        width: 85%;
     }
 
     header {
@@ -262,8 +257,12 @@ main {
     }
 
     .logo {
-        width: 30vw;
-        margin: 0;
+        width: 40vw;
+        text-align: left;
+    }
+
+    .logo-img {
+        width: 75%;
     }
 
     .header-title > h1 {
@@ -285,5 +284,35 @@ main {
         grid-template-columns: repeat(auto-fit, minmax( 23.5%, 1fr));
         grid-template-rows: repeat( auto-fit , 1fr);
         grid-gap: 8px;
+    }
+
+    .modal-content {
+        width: 80%;
+    }
+
+    .container-img-info-popup {
+        display: grid;
+        grid-template-columns: repeat( auto-fit , minmax(48%, 1fr));
+        grid-template-rows: repeat( auto-fit , 1fr);
+    }
+
+    .popup-img > img {
+        width: 100%;
+    }
+
+    /* ================ Previous and Next nav ================= */
+    .nav > button {
+        font-size: 55px;
+    }
+}
+
+@media only screen and (min-width : 1044px) {
+    .logo {
+        width: 30vw;
+        text-align: left;
+    }
+
+    .logo-img {
+        width: 80%;
     }
 }

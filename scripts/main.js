@@ -27,7 +27,7 @@ const displayImage = () => {
         let personInfo = document.createElement('div');
         personInfo.classList.add('modal-content');
         personInfo.innerHTML = `
-            <a href="#top" class="close">×</a>
+            <a href="#" class="close">×</a>
            
             <div class='container-img-info-popup'>
                 <div class='popup-img'>
@@ -55,6 +55,14 @@ const displayImage = () => {
                     </p>
                 </div>
             </div>
+            <div class='nav-container'>
+                <div class='nav prev-nav'>
+                    <button>&lt;</button>
+                </div>
+                <div class='nav next-nav'>
+                    <button>&gt;</button>
+                </div>
+            </div>
         `;
 
         modalDiv.appendChild(personInfo);
@@ -65,7 +73,7 @@ const displayImage = () => {
 
 // add eventListener inline on <img> element above
 const popup = (element) => {            
-    console.log(element);
+    //console.log(element);
     //console.log(element.alt);
     let targetedPopup = document.querySelector(`img[alt = '${element.alt}'] ~ .modal`);
     targetedPopup.style.display = 'block';
@@ -86,6 +94,18 @@ const popup = (element) => {
         targetedPopup.style.display = "none";
         }
     }
+
+    /* let prevBtn = document.querySelector(`img[alt = '${element.alt}'] ~ .modal .prev-nav button`);
+    let nextBtn = document.querySelector(`img[alt = '${element.alt}'] ~ .modal .next-nav button`);
+        //console.log(prevBtn);
+        //console.log(nextBtn);
+    
+    let nextModal = element.parentNode.nextElementSibling.children[2];
+        console.log(nextModal);
+    nextBtn.addEventListener('click', () => {
+        nextModal.style.display = 'block';
+    }); */
+    
 
     
 
