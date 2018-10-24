@@ -27,7 +27,7 @@ const displayImage = () => {
         let personInfo = document.createElement('div');
         personInfo.classList.add('modal-content');
         personInfo.innerHTML = `
-            <a href="#" class="close">×</a>
+            <a href="#" class="close" onclick="closingBtn(this)">×</a>
            
             <div class='container-img-info-popup'>
                 <div class='popup-img'>
@@ -56,10 +56,10 @@ const displayImage = () => {
                 </div>
             </div>
             <div class='nav-container'>
-                <div class='nav prev-nav'>
+                <div class='nav prev-nav' onclick="prevPic(this)">
                     <button>&lt;</button>
                 </div>
-                <div class='nav next-nav'>
+                <div class='nav next-nav' onclick="nextPic(this)">
                     <button>&gt;</button>
                 </div>
             </div>
@@ -73,45 +73,65 @@ const displayImage = () => {
 
 // add eventListener inline on <img> element above
 const popup = (element) => {            
-    //console.log(element);
+    // console.log(element);
     //console.log(element.alt);
     let targetedPopup = document.querySelector(`img[alt = '${element.alt}'] ~ .modal`);
     targetedPopup.style.display = 'block';
 
-    let closePopup = document.querySelector(`img[alt = '${element.alt}'] ~ .modal a`);
+    /* let closePopup = document.querySelector(`img[alt = '${element.alt}'] ~ .modal a`);
     closePopup.addEventListener('click', () => {
         targetedPopup.style.display = 'none';
-    });
+    }); */
 
     /* --- Clicking anywhere will close the modal, including the its modal area  
     targetedPopup.addEventListener('click', () => {
         targetedPopup.style.display = 'none';
     }); */
-
-    // When user clicks anywhere outside of the Modal, close Modal
-    window.onclick = function(event) {
-        if (event.target == targetedPopup) {
-        targetedPopup.style.display = "none";
-        }
-    }
-
-    /* let prevBtn = document.querySelector(`img[alt = '${element.alt}'] ~ .modal .prev-nav button`);
-    let nextBtn = document.querySelector(`img[alt = '${element.alt}'] ~ .modal .next-nav button`);
-        //console.log(prevBtn);
-        //console.log(nextBtn);
-    
-    let nextModal = element.parentNode.nextElementSibling.children[2];
-        console.log(nextModal);
-    nextBtn.addEventListener('click', () => {
-        nextModal.style.display = 'block';
-    }); */
-    
-
-    
-
-    /* let popup = event.target.nextElementSibling.nextElementSibling;
-    popup.style.display = 'block'; */
 }
+
+const nextPic = (e) => {
+    let itself = e.parentNode.parentNode.parentNode;
+    let checkNext = e.parentNode.parentNode.parentNode.parentNode.nextElementSibling;
+        // console.log(itself);
+    if (checkNext == null) {
+        let firstPic = document.querySelector('.pictures-container .individual-info:first-child .modal');
+        itself.style.display = "none";
+        firstPic.style.display = "block";
+    } else {
+        let next = checkNext.children[2];
+        itself.style.display = "none";
+        next.style.display = "block";
+    } 
+}
+
+const prevPic = (e) => {
+    let itself = e.parentNode.parentNode.parentNode;
+    let checkPrev = e.parentNode.parentNode.parentNode.parentNode.previousElementSibling;       // In case of the first picture, have to connect to the last picture
+        // console.log(checkPrev);
+    if (checkPrev == null) {
+        let lastPic = document.querySelector('.pictures-container .individual-info:last-child .modal');
+        itself.style.display = "none";
+        lastPic.style.display = "block";
+    } else {
+        let prev = checkPrev.children[2];
+        itself.style.display = "none";
+        prev.style.display = "block";
+    }    
+}
+
+const closingBtn = (e) => {
+    let modal = e.parentNode.parentNode;
+        // console.log(modal);
+    modal.style.display = "none";
+}
+
+// When user clicks anywhere outside of the Modal, close Modal
+window.onclick = function(event) {
+    let modal = event.target.classList.contains('modal')        // Return a boolean value
+    if (modal) {
+        event.target.style.display = "none";
+    }   
+}  
 
 // ======================== Calling functions =========================
 setTimeout(displayImage, 100);
