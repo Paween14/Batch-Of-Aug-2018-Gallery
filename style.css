@@ -88,8 +88,12 @@ main {
     background-color: rgba(0, 0, 0, 0.45);
 }
 
+.individual-info > img {
+    opacity: 0.75;
+}
+
 .individual-info > img:hover {
-    opacity: 0.5;
+    opacity: 1;
 }
 
 .individual-info > p {
