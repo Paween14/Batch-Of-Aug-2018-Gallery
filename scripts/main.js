@@ -6,9 +6,6 @@ const galleryArea = document.querySelector(".pictures-container");
 const displayImage = () => {
   const infoAll = photoInfo;
   infoAll.forEach(individual => {
-    // let personName = individual.firstName.toLowerCase().trim();         // Remove whitespace from both sides of a string
-    //let personName = individual.src.trim();
-
     let imageAndInfo = document.createElement("div");
     imageAndInfo.classList.add("individual-info");
     imageAndInfo.innerHTML = `

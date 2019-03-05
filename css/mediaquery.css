@@ -2,40 +2,12 @@
                     Media-query
 ============================================================= */
 @media only screen and (min-width: 578px) {
-  .header-wrapper {
-    /* border: 1px solid green; */
-
-    /*     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    align-content: flex-start; */
-  }
-
-  /*   header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  } */
-
-  .logo {
-    /* width: 40vw;
-    text-align: left; */
-  }
-
   .logo-img {
-    /* border: 1px solid pink; */
     width: 25%;
-  }
-
-  .header-title {
-    /* border: 1px solid brown; */
   }
 
   .header-title > p {
     font-size: 11px;
-    /* margin-top: 7px; */
-    /* letter-spacing: 2px; */
   }
 
   .individual-info > p {
@@ -49,13 +21,14 @@
     grid-template-rows: repeat(auto-fit, 1fr);
     grid-gap: 5px;
   }
+
+  .popup-information {
+    padding: 20px 10px 20px 30px;
+  }
 }
 
 @media only screen and (min-width: 820px) {
   .header-wrapper {
-    /* border: 1px solid orangered; */
-    /* display: flex;
-    justify-content: space-between; */
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     align-items: center;
@@ -63,8 +36,6 @@
 
   .logo {
     grid-column: 1 / span 2;
-    /*     width: 40vw;
-    text-align: left; */
   }
 
   .logo-img {
@@ -102,19 +73,9 @@
     width: 45%;
   }
 
-  /*   .modal-content {
-    width: 48%;
+  .modal-content {
+    width: 70%;
   }
-
-  .container-img-info-popup {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(48%, 1fr));
-    grid-template-rows: repeat(auto-fit, 1fr);
-  }
-
-  .popup-img > img {
-    width: 90%;
-  } */
 
   /* ========== Previous and Next nav =========== */
   .nav > button {
@@ -122,18 +83,9 @@
   }
 }
 
-@media only screen and (min-width: 1180px) {
-  .logo {
-    /* width: 30vw; */
-    /* text-align: left; */
-  }
-
-  .logo-img {
-    /* width: 80%; */
-  }
-
+@media only screen and (min-width: 1080px) {
   .modal-content {
-    width: 48%;
+    width: 57%;
   }
 
   .container-img-info-popup {
